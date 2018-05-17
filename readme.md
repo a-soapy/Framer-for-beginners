@@ -3,9 +3,6 @@
 Get familiar with the Framer interface
 Introduce basic animations, Events, States, and decisions.
 
----
-
-
  Complimentary files
 [Slides](https://docs.google.com/presentation/d/1D9ExqZuZ4E4fjNWcv4BdyLPSPVMLlFcYqvQuHYPx-zc/edit#slide=id.g35f4d47385_0_0)
 [The Framer 101 Challenge](https://framer.cloud/YvlIf/)
@@ -26,8 +23,6 @@ Introduce basic animations, Events, States, and decisions.
 ## Run Through
 ### Welcome!
 Happy to have you on board! I hope you’ll find this document helpful to learn, teach, or learn to teach Framer. It’s the first of a series which aims to make its readers and users more confident in their Framer prototyping abilities, and broaden their understanding of code.
-
-NB: If you haven’t already, don’t forget to ask Alex on the Mobile team for a Framer license!
 
 ### What’s in a Framer project folder?
 Let’s dive in with the very basics:
