@@ -1,9 +1,12 @@
 # Workshop 1
 ## Objectives
 Get familiar with the Framer interface
-Introduce basic animations, Events, States, and decisions
+Introduce basic animations, Events, States, and decisions.
 
-## Complimentary files
+---
+
+
+ Complimentary files
 [Slides](https://docs.google.com/presentation/d/1D9ExqZuZ4E4fjNWcv4BdyLPSPVMLlFcYqvQuHYPx-zc/edit#slide=id.g35f4d47385_0_0)
 [The Framer 101 Challenge](https://framer.cloud/YvlIf/)
 [The Framer 101 Challenge _ Solved](https://framer.cloud/VFqCK/)
@@ -21,13 +24,13 @@ Introduce basic animations, Events, States, and decisions
 - - - -
 
 ## Run Through
-### Welcome! 
-Happy to have you on board! I hope you’ll find this document helpful to learn, teach, or learn to teach Framer. It’s the first of a series which aims to make its readers and users more confident in their Framer prototyping abilities, and broaden their understanding of code. 
+### Welcome!
+Happy to have you on board! I hope you’ll find this document helpful to learn, teach, or learn to teach Framer. It’s the first of a series which aims to make its readers and users more confident in their Framer prototyping abilities, and broaden their understanding of code.
 
-NB: If you haven’t already, don’t forget to ask Alex on the Mobile team for a Framer license! 
+NB: If you haven’t already, don’t forget to ask Alex on the Mobile team for a Framer license!
 
 ### What’s in a Framer project folder?
-Let’s dive in with the very basics: 
+Let’s dive in with the very basics:
 
 * Each Framer prototype is stored not as a single file but as a folder. If you see a folder name ending .framer, that means it’s a full prototype.
 * To open these folders, you can go via the classic file > open (or hit cmd+o) or you can drag the whole folder directly onto the Framer icon in your dock.
@@ -40,7 +43,7 @@ You can import these via the import button (or by hitting cmd+i) in the bottom l
 
 * In your sketch files, all layers you want to pick up in code need to be in a group.
 * Naming conventions get extremely important, so a tidy sketch file is a must! Using camelCase is good practice, and any spaces in group names will be replaced by an underscore.
-* When calling your Sketch layers in your Framer prototype, you will have to tell Framer they are coming from your sketch document by adding `sketch.` in front of your layer ’s name. 
+* When calling your Sketch layers in your Framer prototype, you will have to tell Framer they are coming from your sketch document by adding `sketch.` in front of your layer ’s name.
 
 * However, importing you sketch file will add a line of code at the top of your document…
 
@@ -71,7 +74,7 @@ It’s a fairly straightforward one, with a lot of similarities to the Sketch in
 * Another key thing for your layers to be picked up in code are Targets. Layers must be Targeted to be usable in code mode.
 
 * To target a layer, hover over its name in the hierarchy column. An outlined target shape will appear. Click it, and its centre will fill up and its code-friendly name will appear.
- 
+
 `![](https://i.imgur.com/fchfOgx.png) `
 
 * This gives you the opportunity to edit it to something more efficient.  Once targeted, the target icon will continuously show next to the Frame name. To remove a target, right-click and hit _delete target_.
@@ -110,9 +113,9 @@ There’s 8 chapters in the Challenge, covering 4 topics in total:
 * 5 & 6: Cycles, and cycling through them
 * 7 & 8: if/else decision statements
 
-If you haven’t been through this, it can be a bit ambiguous what the challenge is trying to get you to do (I’m working on it, I promise) so it’s best to practice it next to someone that has either done it, or someone who’s got these basics down. Reading what’s inside each _Spoiler_ fold might also help understand the conditions that need to be met in order for the _next_ button to appear. 
+If you haven’t been through this, it can be a bit ambiguous what the challenge is trying to get you to do (I’m working on it, I promise) so it’s best to practice it next to someone that has either done it, or someone who’s got these basics down. Reading what’s inside each _Spoiler_ fold might also help understand the conditions that need to be met in order for the _next_ button to appear.
 
-It’ll be primarily using code mode, so go ahead and switch with cmd+2 if you haven’t already! 
+It’ll be primarily using code mode, so go ahead and switch with cmd+2 if you haven’t already!
 
 ### Method and solutions
 **Give the challenges a try before reading ahead!**
@@ -120,12 +123,12 @@ It’ll be primarily using code mode, so go ahead and switch with cmd+2 if you h
 **Challenge 1**
 I’d start by finding out _where_ that yellow safe zone actually is.
 There’s multiple ways you can do this:
-* Switching back to design mode, you can click on the zone and see its x coordinate on the far right panel. 
-* Using `print safeZone.x`  its x positioning will show up in the print console. 
+* Switching back to design mode, you can click on the zone and see its x coordinate on the far right panel.
+* Using `print safeZone.x`  its x positioning will show up in the print console.
 
-NB: `print` is a really handy way to find out specific information about your layers. 
+NB: `print` is a really handy way to find out specific information about your layers.
 
-Using methods similar as above (or, in this case, by eye), we can also pick up that the layer safeZone is rotated 45 degrees. 
+Using methods similar as above (or, in this case, by eye), we can also pick up that the layer safeZone is rotated 45 degrees.
 
 So we can make `box` animate:
 
@@ -149,8 +152,8 @@ circle.animate
 ```
 
 **Challenge 3**
-Onto events! 
-Events, aka listeners, are used to trigger stuff. They’re recognised by their syntax: `onTap` , `onDrag`, `onSwipe`  and the fact that they’re followed by a dash-rocket ( `->` ). The dash rocket is a signal to Framer that “hey, something is about to trigger something else, listen up to this action!”. 
+Onto events!
+Events, aka listeners, are used to trigger stuff. They’re recognised by their syntax: `onTap` , `onDrag`, `onSwipe`  and the fact that they’re followed by a dash-rocket ( `->` ). The dash rocket is a signal to Framer that “hey, something is about to trigger something else, listen up to this action!”.
 
 Now, we can trigger the star’s animation onTap. The syntax is as follows:
 
@@ -161,10 +164,10 @@ star.onTap ->
 		backgroundColor: "yellow"
 ```
 
-NB: There’s a whole lot of events! They can go as `onSwipeUp` , `onDragStart`, `onMouseOver`, `onTouchStart`, `onPanRight` … and so on; the Docs (cmd+d) is a good place to find out about all of them. 
+NB: There’s a whole lot of events! They can go as `onSwipeUp` , `onDragStart`, `onMouseOver`, `onTouchStart`, `onPanRight` … and so on; the Docs (cmd+d) is a good place to find out about all of them.
 
 **Challenge 4**
-Again, exact same structure as the previous one! We want to make the square’s opacity animate down to 0, and trigger this onTap. 
+Again, exact same structure as the previous one! We want to make the square’s opacity animate down to 0, and trigger this onTap.
 
 ``` coffeescript
 square.onTap ->
@@ -182,7 +185,7 @@ square.onTap ->
 			time: 0.5
 ```
 
-I’m also going to use this opportunity to point out a real handy Framer feature, which will help you code less: 
+I’m also going to use this opportunity to point out a real handy Framer feature, which will help you code less:
 
 `![](https://i.imgur.com/kTbcxJ6.png)`
 
@@ -203,7 +206,7 @@ There are multiple actions associated with states:
 * stateSwitch will instantly switch to the state listed in its brackets `layerName.stateSwitch(“stateName”)`
 * You can also animate to a state by using `layerName.animate(“stateName”)`
 
-In this case, we’re hoping to make the toggle switch back and forth between _on_ and _off_ onTap. 
+In this case, we’re hoping to make the toggle switch back and forth between _on_ and _off_ onTap.
 
 Here’s how to go about it:
 ``` coffeescript
@@ -214,7 +217,7 @@ toggle.onTap ->
 NB: When using states, make sure that you define the states _before_ you try animating them, otherwise Framer will get confused as it won’t see what state you’re trying to use.
 
 **Challenge 6**
-Piece of cake, same method but with more states! The states are hidden into the Spoilers fold, so have a browse if you’re not sure what states you’re animating to! 
+Piece of cake, same method but with more states! The states are hidden into the Spoilers fold, so have a browse if you’re not sure what states you’re animating to!
 
 ``` coffeescript
 button.onTap ->
@@ -240,7 +243,7 @@ It makes writing it in code slightly more approachable.
 ``` coffeescript
 button2.onTap ->
 	pointer2.stateCycle("summer", "autumn", "winter", "spring")
-	
+
 	if pointer2.states.current.name is "summer"
 		holidays.animate
 			opacity: 1
@@ -253,7 +256,7 @@ Now _holidays_ will appear as soon as the pointer hits _summer_, and we can make
 ``` coffeescript
 button2.onTap ->
 	pointer2.stateCycle("summer", "autumn", "winter", "spring")
-	
+
 	if pointer2.states.current.name is "summer"
 		holidays.animate
 			opacity: 1
@@ -262,7 +265,7 @@ button2.onTap ->
 			opacity: 0
 ```
 
-* Notice the indentation on this bit of code is key. We are setting the condition within the tap event, and what should happen if the condition is met is one more tab-space in. 
+* Notice the indentation on this bit of code is key. We are setting the condition within the tap event, and what should happen if the condition is met is one more tab-space in.
 
 * As well as `is`, we could also have used `==`. If we wanted it to reverse this and make it appear on everything but _summer_, we could have used `isn’t` or `!=`.
 
@@ -288,17 +291,17 @@ plane.onDragEnd ->
 ```
 
 **The Finish Line!**
-And that’s it for the Framer 101 Challenge! 
+And that’s it for the Framer 101 Challenge!
 
 - - - -
 
 ## Snippets Library
 That may seem like a lot of wording to remember, which is why Snippets are a real life saver!
 
-* Charlie Deets put together a [library of essential snippets](https://github.com/robotdestroy/Framer-Snippets-Library) which I highly recommend you download! 
+* Charlie Deets put together a [library of essential snippets](https://github.com/robotdestroy/Framer-Snippets-Library) which I highly recommend you download!
 * To add them to your library, open up Framer and go to the Snippet tab in the far left column.
 * At the very bottom of the snippets, you have the option to _Show Snippets Folder…_.
-* If you open that up, you can then paste or drag and drop your newly downloaded snippets in there, and they’ll appear in your Framer library. 
+* If you open that up, you can then paste or drag and drop your newly downloaded snippets in there, and they’ll appear in your Framer library.
 
 ## Other resources
 * [Medium](https://blog.framer.com/)! There are lots of amazing tutorials, articles, and resources on there. [The School of Do](https://medium.com/the-school-of-do/tagged/framer) and its cheat sheets are great.
@@ -310,4 +313,4 @@ That may seem like a lot of wording to remember, which is why Snippets are a rea
 > Thanks for reading and hope to catch you at the next workshop!   
 
 
-#framer/workshop1#
+#framer/workshop1## Framer-for-beginners
