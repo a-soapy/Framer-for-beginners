@@ -4,9 +4,9 @@ Get familiar with the Framer interface
 Introduce basic animations, Events, States, and decisions.
 
  Complimentary files
-[Slides](https://docs.google.com/presentation/d/1D9ExqZuZ4E4fjNWcv4BdyLPSPVMLlFcYqvQuHYPx-zc/edit#slide=id.g35f4d47385_0_0)
-[The Framer 101 Challenge](https://framer.cloud/YvlIf/)
-[The Framer 101 Challenge _ Solved](https://framer.cloud/VFqCK/)
+* [Slides](https://docs.google.com/presentation/d/1D9ExqZuZ4E4fjNWcv4BdyLPSPVMLlFcYqvQuHYPx-zc/edit#slide=id.g35f4d47385_0_0)
+* [The Framer 101 Challenge](https://framer.cloud/YvlIf/)
+* [The Framer 101 Challenge _ Solved](https://framer.cloud/VFqCK/)
 
 ## Timeline
 1. Welcome!
@@ -70,11 +70,11 @@ It’s a fairly straightforward one, with a lot of similarities to the Sketch in
 
 * To target a layer, hover over its name in the hierarchy column. An outlined target shape will appear. Click it, and its centre will fill up and its code-friendly name will appear.
 
-`![](https://i.imgur.com/fchfOgx.png) `
+![](https://i.imgur.com/fchfOgx.png)
 
 * This gives you the opportunity to edit it to something more efficient.  Once targeted, the target icon will continuously show next to the Frame name. To remove a target, right-click and hit _delete target_.
 
-`![](https://i.imgur.com/oikpPoi.png) `
+![](https://i.imgur.com/oikpPoi.png)
 
 * Targets can be really useful when trying out different versions of the same interface. Call each version the same thing, but only target one version at a time in order to see how each one works in your prototype.
 
@@ -182,15 +182,15 @@ square.onTap ->
 
 I’m also going to use this opportunity to point out a real handy Framer feature, which will help you code less:
 
-`![](https://i.imgur.com/kTbcxJ6.png)`
+![](https://i.imgur.com/kTbcxJ6.png)
 
 When you click that square which runs along the left side of your code, the hierarchy column will switch to a visual interface which lets you edit the layer’s properties. Edits made in that interface are added to your code as you’re changing them!
 
-`![](https://i.imgur.com/VkPkVCP.png)`
+![](https://i.imgur.com/VkPkVCP.png)
 
 That interface also hides another little tab. At the top of it is a curve icon, which when clicked takes you to the animation options tab. It’s got a visual representation of curves and timings for all your interaction design needs.
 
-`![](https://i.imgur.com/42LwNe1.png)`
+![](https://i.imgur.com/42LwNe1.png)
  When in that view, you can also go to the floating preview and drag things around, re-size them…
 
 **Challenge 5**
