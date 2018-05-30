@@ -307,5 +307,215 @@ That may seem like a lot of wording to remember, which is why Snippets are a rea
 
 > Thanks for reading and hope to catch you at the next workshop!   
 
+---
+---
 
-#framer/workshop1## Framer-for-beginners
+
+
+# Workshop 2
+## Objectives
+* Review learnings of Workshop 1!
+* Learn about the Flow and Page components
+
+## Complimentary files
+* [Slides](https://docs.google.com/presentation/d/15xDyGJAjE2_WBhbtGngS40NhiOVcDwZA6kM-emvwWlk/edit#slide=id.g38381c9cdb_0_4)
+* [Flow and Page components _ Design mode only](https://framer.cloud/KXGpB)
+* [Flow and Page components _ Full code](https://framer.cloud/kvcUv)
+
+## Timeline
+1. Welcome!
+2.  The Framer 101 Challenge review
+3. Practice: Using the flow component
+4. Practice: Using the page component
+
+---
+
+## Welcome!
+Welcome to this second workshop run-through! If you weren’t feeling Workshop 1, we’ll have a quick review for you to be able to catch-up with the bandwagon! However I do recommend reading through it eventually as it does cover everything in much more detail.
+
+If you’ve come straight from the Workshop 1 document, go ahead and jump straight to the practice rounds!
+
+## The Framer 101 Challenge review
+### Basic animations
+Challenges 1 & 2 covered basic animations. In coffeeScript, they look like this:
+```coffeeScript
+layerName.animate
+	x: 10
+	y: 20
+	scale: 1.5
+	opacity: 0.5
+```
+… with as many properties as you want to animate in one go.
+
+Framer will then take layerName’s properties (which you will have defined via design or code mode), and automatically animate them to the ones defined under `layerName.animate`.
+
+We also looked at how to use `print`  to find out a layer’s specific properties. Using `print layerName.x` will trigger a console in your floating preview panel, in which the value of layerName’s x coordinate will show up. It’s a simple tool that doesn’t affect the interface you’re building — it just shows up on top of it.
+
+### Events / Listeners
+Events are different gestures (`onScroll`, `onSwipe`, `onMouseOver` …) recognised by Framer that can be used as triggers. They’re followed bandful y a dash-rocket `->`  to signal Framer to look out for this action.
+
+### States
+States are like a layer’s different forms or looks. A layer’s states first have to be defined, and can then be used in a handful of different ways: a `stateSwitch("stateName")` to switch without animating; a `stateCycle("stateName", "stateName2")` which will animate between the states you list; and animating to a single state using `animate("stateName")`. They’re useful when an animation is going to be used repetitively throughout your prototype.
+
+### If/else statements
+They’re used to add logic to our prototypes. We can use them to tell Framer to only run certain actions when certain conditions are met.
+
+## Practice: Using the flow component
+### Quick links
+* [Flow and Page components _ Design mode only](https://framer.cloud/KXGpB)
+* [Flow and Page components _ Full code](https://framer.cloud/kvcUv)
+
+## Practice: Using the page component
+### Intro
+And let’s make some stuff! The Flow component and the Page components are two extremely useful and built-in Framer tools.
+
+### The Flow component
+The flow component is comparable to linking artboards together using inVision. It makes sure your app has a flow or journey. However, the great thing about Framer’s built in Flow component is that it will do some of the logic for you; if your flow starts being no-so-linear, no need to do your head in trying to remember whether you’ve set up your links correctly.
+
+To start, here’s a basic flow component example:
+![](https://i.imgur.com/kC6Vs3f.gifv)
+
+The _ Design mode only fit linked above contains all the ingredients to make this magic happen, so let’s have a quick look at its Design mode. We can see three Frames: `screenA`, `screenB`, and `screenC`, which each contain a letter Frame (… `A`, `B`, and `C`), and `screenB` and `screenC` also have a back button called `backB` and `backC`.
+
+Let’s start the prototype by telling Framer that we’re going to need a Flow component using the following syntax:
+```coffeescript
+flow = new FlowComponent
+```
+
+In In this case I’ve chosen to name my component `flow` but I could’ve called anything: `pineapple = new FlowComponent` would work just as well (as long as you’re consistent in how you refer to it)!
+
+Next is telling Framer what Frame to use as a starting point for our Flow. We can use `flow.showNext(screenA)` to establish `screenA` as the starting screen.
+```coffeescript
+flow = new FlowComponent
+flow.showNext(screenA)
+```
+
+… and if you’re on the pineapple hype, it would of course read as `pineapple.shownext(screenA)`.
+
+Now let’s use our Flow component to make `A` link to `screenB`, and `B`, link to `screenC`. These transitions should happen on tap, so let’s also use an event:
+
+```
+A.onTap ->
+	flow.showNext(screenB)
+```
+
+... and linking B to screenC:
+```
+A.onTap ->
+	flow.showNext(screenB)
+
+B.onTap ->
+	flow.showNext(screenC)
+
+```
+
+Easy game! Let’s check out these back buttons.
+Just like we used `showNext`, we can use `showPrevious` to tell Framer we want to link to the Frame we just came from. The clever thing is we don’t have to specify what Frame that was, Framer will know 👀 …
+
+Practically, this means we can build:
+```coffeescript
+A.onTap ->
+	flow.showNext(screenB)
+
+B.onTap ->
+	flow.showNext(screenC)
+
+backB.onTap ->
+	flow.showPrevious()
+
+backC.onTap ->
+	flow.showPrevious()
+```
+
+If you ever needed to override this logic; you could also specify which screen to animate your flow back to using `flow.showPrevious(screenName)`.
+
+### The Page component
+The Page component allows you to create interactions using card-like designs. The Page component is essentially an invisible layer that Framer uses as a guide to snap your cards to.
+
+In the example we’ll build, it’ll look something like this:
+![](https://i.imgur.com/NadQShi.mp4)
+
+Again, let’s have a quick look at the Design mode to see what we have, and work from there. We’ll need to use `page1`, `page2` and `page3` as pages for our component. Notice the coloured Frame sits within its wider frame. The space between the content and the frame serves as *padding* between the pages. When creating pages for a page component, I usually start by making the page’s content, then put it all in a frame and adjust the spacing just before it’s ready to be used in code.
+
+Similarly to the Flow component, let’s start by telling Framer we want a Page component, which we’ll call `page`.
+
+```coffeescript
+page = new PageComponent
+```
+
+You should see a grey, transparent 200×200 layer appear in the top left of your page. This layer shows you what space your pages will snap to.
+
+We therefore need to define its properties in order to define where we want this page component to be. These properties can go straight under the new PageComponent, like this:
+
+```coffeescript
+page = new PageComponent
+	y: 400
+	midX: Screen.midX
+```
+
+And then match its size to the size of the pages we’ll be using:
+
+```coffeescript
+page = new PageComponent
+	y: 400
+	midX: Screen.midX
+	height: 190
+	width: 200
+```
+
+Now, the layer should look like a good placeholder for our pages. Let’s go ahead and add those in:
+
+```coffeescript
+page.addPage(page1)
+page.addPage(page2)
+page.addPage(page3)
+```
+
+You should have a clear view of `page1`, and be able to drag it left to get to `page2`. It’s a good start! We can refine the component by setting its scroll and clip properties. Right now, the pages can be dragged about freely both horizontally and vertically, which isn’t ideal for the type of interaction we’re after.
+
+Let’s go ahead and disable the vertical scroll in the component’s properties:
+
+```coffeescript
+page = new PageComponent
+	y: 400
+	midX: Screen.midX
+	height: 190
+	width: 200
+	scrollVertical: false
+```
+
+Better, but let’s also make the next pages visible. We can do this by turning off the default clip property, as `clip` means the current Page component is acting like a mask, and hiding everything that does not sit within the component.
+
+```coffeescript
+page = new PageComponent
+	y: 400
+	midX: Screen.midX
+	height: 190
+	width: 200
+	scrollVertical: false
+	clip: false
+```
+
+That interaction now works as we wanted it to, so we’re almost there! The last touch is making sure `page` follows the Flow behaviour of the screen it’s on. We can do this by setting `page`’s parent to its screen, ie. `screenA`.
+
+```coffeescript
+page = new PageComponent
+	y: 400
+	midX: Screen.midX
+	height: 190
+	width: 200
+	scrollVertical: false
+	clip: false
+	parent: screenA
+```
+
+And that should do it for the page component!
+
+---
+
+That’s the end of workshop 2, so I hope you’ll start feeling more confident using these two components!
+
+> Don’t hesitate to reach out if you have any other questions or want some extra practice exercises, and see you at the next workshop!
+
+---
+---
